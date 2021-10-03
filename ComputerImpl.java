@@ -2,11 +2,11 @@ package com.company;
 import Component.*;
 public abstract class ComputerImpl implements Computer
 {
-    String maker;
-    String model;
-    Harddisk harddisk;
-    Processor processor;
-    Ozu ozu;
+    protected String maker;
+    protected String model;
+    protected Harddisk harddisk;
+    protected Processor processor;
+    protected Ozu ozu;
     //так мы избавляемся от дублирующего кода
     //в дальнейшем, все что нам нужно - переопределить метод toString
     public String toString()
@@ -27,8 +27,8 @@ public abstract class ComputerImpl implements Computer
 }
 
 abstract class PortableComputer extends ComputerImpl{ // портативный компьютер
-    Display display;
-    Keyboard keyboard;
+    protected Display display;
+    protected Keyboard keyboard;
     public String toString()
     {
         return ("Модель: "+this.model+" Производитель: "+this.maker+" Процессор: "+this.processor+" Жёсткий диск: "+this.harddisk+" ОЗУ: "+this.ozu+" Монитор: "+this.display+" Клавиатура: "+this.keyboard);
@@ -80,7 +80,7 @@ class Tablet extends PortableComputer // планшет: процессор, О�
 
 class PersonalComputer extends DesktopComputer // ПК: процессор, ОЗУ, жесткий диск, видеокарта
 {
-    GraphicsCard graphicsCard;
+    private GraphicsCard graphicsCard;
     public PersonalComputer(String Model, String Maker, Processor Processor2, Harddisk Harddisk2, Ozu Ozu2,GraphicsCard graphicsCard2) {
         maker =Maker;
         model =Model;

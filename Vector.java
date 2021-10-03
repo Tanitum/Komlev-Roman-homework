@@ -1,9 +1,9 @@
 package com.company;
 public class Vector
 {
-    double x;
-    double y;
-    double z;
+    private double x;
+    private double y;
+    private double z;
     public double getX() {
         return x;
     }
@@ -56,8 +56,8 @@ public class Vector
     }
      @Override
     public boolean equals(Object vector) {
-        Vector internal_vek = (Vector) vector;
-        if (x==internal_vek.x && y==internal_vek.y && z==internal_vek.z){
+        Vector internalVek = (Vector) vector;
+        if (x==internalVek.x && y==internalVek.y && z==internalVek.z){
             return true;}
         else{return false;}
     }

@@ -1,9 +1,9 @@
 package Component;
 
 public class Ozu extends Component { //ОЗУ
-    String ozu1;
-    String memory;
-    int frequency;
+    private String ozu1;
+    private String memory;
+    private int frequency;
 
     public Ozu(String ozu) {
         ozu1 = ozu;

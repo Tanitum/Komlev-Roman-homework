@@ -81,6 +81,7 @@ public class Main {
                 computers2[number]= new Server(words[1], words[2], new Processor(words[3]), new Harddisk(words[4]), new Ozu(words[5]));
             }
             number+=1;
+ //           computers2[0].
         }
         for(int j=0;j<number;j++){ // вывод всех компьютеров из файла
             System.out.println(computers2[j].turnOn());

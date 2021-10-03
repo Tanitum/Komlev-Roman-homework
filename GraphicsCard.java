@@ -1,8 +1,8 @@
 package Component;
 
 public class GraphicsCard extends Component { //видеокарта
-    String graphicsCard1;
-    String memory;
+    private String graphicsCard1;
+    private String memory;
 
     public GraphicsCard(String graphicsCard) {
         super("Intel");

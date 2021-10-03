@@ -1,7 +1,7 @@
 package Component;
 
 public class Display extends Component { //монитор
-    String display1;
+    private String display1;
 
     public Display(String display) {
         display1 = display;

@@ -1,20 +1,20 @@
 package Component;
 
 public class Harddisk extends Component { //монитор
-    String _harddisk;
-    String _type;
-    int _capacity;
+    private String harddisk;
+    private String type;
+    private int capacity;
     public Harddisk(String processor) {
         this(processor, "internal", 800);
     }
 
-    public Harddisk(String harddisk, String type, int capacity) {
-        _harddisk= harddisk;
-        _type = type;
-        _capacity = capacity;
+    public Harddisk(String harddisk2, String type2, int capacity2) {
+        harddisk= harddisk2;
+        type = type2;
+        capacity = capacity2;
     }
 
     public String toString() {
-        return _harddisk +" (тип:"+_type+" объем:"+_capacity+", " + super.toString()+")";
+        return harddisk +" (тип:"+type+" объем:"+capacity+", " + super.toString()+")";
     }
 }
