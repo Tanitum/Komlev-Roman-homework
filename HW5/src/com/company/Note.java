@@ -1,15 +1,22 @@
 package com.company;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Note
 {
     public final List<String> notes = new ArrayList<String>();
+    private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
     public void addNote(int index, String note)
     {
         System.out.println("Сейчас будет добавлена заметка [" + note + "] На позицию " + index);
-        notes.add(index, note);
+        lock.writeLock().lock();
+        try {
+            notes.add(index, note);
+        } finally {
+            lock.writeLock().unlock();
+        }
         System.out.println("Уже добавлена заметка [" + note + "]");
     }
 
@@ -17,7 +24,12 @@ public class Note
     {
         System.out.println("Сейчас будет удалена заметка с позиции " + index);
         String note;
-        note = notes.remove(index);
+        lock.writeLock().lock();
+        try {
+            note = notes.remove(index);
+        } finally {
+            lock.writeLock().unlock();
+        }
         System.out.println("Уже удалена заметка [" + note + "] с позиции " + index);
     }
 
@@ -25,7 +37,12 @@ public class Note
     {
         System.out.println("Сейчас будет прочтена заметка с позиции " + index);
         String note;
-        note = notes.get(index);
+        lock.writeLock().lock();
+        try {
+            note = notes.get(index);
+        } finally {
+            lock.writeLock().unlock();
+        }
         System.out.println("Прочтена заметка [" + note + "] с позиции " + index);
     }
 }
