@@ -22,7 +22,9 @@ public final class SingletonTask
     {
         if (instance == null)
         {
+            synchronized(SingletonTask.class){
             instance = new SingletonTask(value);
+            }
         }
         return instance;
     }
